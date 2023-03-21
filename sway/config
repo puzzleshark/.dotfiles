@@ -232,5 +232,5 @@ gaps outer 3
 assign [class="Google-chrome"] 10
 for_window [app_id=".*(DEBUG)"] floating enable
 
-exec --no-startup-id alacritty
+exec --no-startup-id code
 exec --no-startup-id google-chrome-stable

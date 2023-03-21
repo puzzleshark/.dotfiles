@@ -1,4 +1,19 @@
 {
     "editor.inlineSuggest.enabled": true,
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Tokyo Night Storm",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.cursorBlinking": "solid",
+    "extensions.ignoreRecommendations": true,
+    "workbench.startupEditor": "none",
+
+    // from old config
+    "zenMode.fullScreen": false,
+    "zenMode.centerLayout": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    // "window.menuBarVisibility": "hidden",
 }
