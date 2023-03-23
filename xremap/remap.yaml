@@ -55,28 +55,28 @@ keymap:
       KEY_L: SHIFT-KEY_RIGHT
       KEY_H: SHIFT-KEY_LEFT
 
-      KEY_W: [KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_RIGHT, KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_RIGHT, KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_LEFT]
-      KEY_E: KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_RIGHT
-      KEY_B: KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_LEFT
+      # larger movements
+      KEY_W: [SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_LEFT]
+      KEY_E: SHIFT-C-KEY_RIGHT
+      KEY_B: SHIFT-C-KEY_LEFT
 
       # how to get out of visual mode
       KEY_D: [KEY_DELETE, { set_mode: normal }]
-      KEY_Y: [KEY_LEFTCTRL-KEY_C, KEY_ESC, { set_mode: normal }]
+      KEY_Y: [C-KEY_C, KEY_ESC, { set_mode: normal }]
       KEY_ESC: [KEY_ESC, { set_mode: normal }]
 
       # end of line
-      SHIFT-KEY_4: KEY_LEFTSHIFT-KEY_END
+      SHIFT-KEY_4: SHIFT-KEY_END
 
       # beginning of line
-      SHIFT-KEY_6: KEY_LEFTSHIFT-KEY_HOME
+      SHIFT-KEY_6: SHIFT-KEY_HOME
 
       # end of file
-      # KEY_RIGHTSHIFT-KEY_G: KEY_LEFTSHIFT-KEY_CTRL-KEY_END
-      # KEY_LEFTSHIFT-KEY_G: KEY_LEFTSHIFT-KEY_CTRL-KEY_HOME
+      SHIFT-KEY_G: SHIFT-C-KEY_END
 
       # beginning of file
-      # KEY_G:
-      #   remap:
-      #     KEY_G: KEY_LEFTSHIFT-KEY_CTRL-KEY_HOME
+      KEY_G:
+        remap:
+          KEY_G: SHIFT-C-KEY_HOME
 
 default_mode: default
