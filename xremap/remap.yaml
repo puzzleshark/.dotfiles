@@ -1,25 +1,82 @@
 keymap:
 
-  - name: whatever
+  - name: default
     mode: default
+    exact_match: true
     remap:
-      # Set mode to configure Vim-like modal remapping
-      KEY_F1: { set_mode: fun }
+      # set mode to configure Vim-like modal remapping
+      KEY_F1: { set_mode: normal }
 
-  - name: vsremap
-    mode: fun
+  - name: normal
+    mode: normal
+    exact_match: true
     remap:
       KEY_I: { set_mode: default }
+
+      # movement
       KEY_J: KEY_DOWN
       KEY_K: KEY_UP
       KEY_L: KEY_RIGHT
       KEY_H: KEY_LEFT
-      KEY_W: KEY_LEFTCTRL-KEY_RIGHT
-      KEY_B: KEY_LEFTCTRL-KEY_LEFT
-      KEY_R: [KEY_LEFTCTRL-KEY_LEFT, KEY_LEFTCTRL-KEY_LEFTSHIFT-KEY_RIGHT]
-      KEY_LEFTSHIFT-KEY_4: KEY_END
-      KEY_RIGHTSHIFT-KEY_4: KEY_END
-      KEY_LEFTSHIFT-KEY_6: KEY_HOME
-      KEY_RIGHTSHIFT-KEY_6: KEY_HOME
+
+      # larger movements
+      KEY_W: [C-KEY_RIGHT, C-KEY_RIGHT, C-KEY_LEFT]
+      KEY_E: C-KEY_RIGHT
+      KEY_B: C-KEY_LEFT
+
+      KEY_X: KEY_DELETE
+      KEY_U: C-KEY_Z
+      KEY_V: { set_mode: visual }
+      KEY_P: C-KEY_V
+
+      # end of line
+      SHIFT-KEY_4: KEY_END
+
+      # beginning of line
+      SHIFT-KEY_6: KEY_HOME
+
+      # end of file
+      SHIFT-KEY_G: C-KEY_END
+
+      # beginning of file
+      KEY_G:
+        remap:
+          KEY_G: C-KEY_HOME
+
+  - name: visual
+    mode: visual
+    exact_match: true
+    remap:
+      KEY_I: { set_mode: default }
+
+      # movement
+      KEY_J: SHIFT-KEY_DOWN
+      KEY_K: SHIFT-KEY_UP
+      KEY_L: SHIFT-KEY_RIGHT
+      KEY_H: SHIFT-KEY_LEFT
+
+      KEY_W: [KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_RIGHT, KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_RIGHT, KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_LEFT]
+      KEY_E: KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_RIGHT
+      KEY_B: KEY_LEFTSHIFT-KEY_LEFTCTRL-KEY_LEFT
+
+      # how to get out of visual mode
+      KEY_D: [KEY_DELETE, { set_mode: normal }]
+      KEY_Y: [KEY_LEFTCTRL-KEY_C, KEY_ESC, { set_mode: normal }]
+      KEY_ESC: [KEY_ESC, { set_mode: normal }]
+
+      # end of line
+      SHIFT-KEY_4: KEY_LEFTSHIFT-KEY_END
+
+      # beginning of line
+      SHIFT-KEY_6: KEY_LEFTSHIFT-KEY_HOME
+
+      # end of file
+      # KEY_RIGHTSHIFT-KEY_G: KEY_LEFTSHIFT-KEY_CTRL-KEY_END
+      # KEY_LEFTSHIFT-KEY_G: KEY_LEFTSHIFT-KEY_CTRL-KEY_HOME
+
+      # beginning of file
+      # KEY_G:
+      #   remap:
+      #     KEY_G: KEY_LEFTSHIFT-KEY_CTRL-KEY_HOME
 
 default_mode: default
