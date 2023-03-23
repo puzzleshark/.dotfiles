@@ -43,6 +43,27 @@ keymap:
         remap:
           KEY_G: C-KEY_HOME
 
+      # delete stuff
+      KEY_D:
+        remap:
+          KEY_I:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE]
+          KEY_A:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE]
+          KEY_W: C-KEY_DELETE
+
+      KEY_C:
+        remap:
+          KEY_I:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, { set_mode: default }]
+          KEY_A:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: default }]
+          KEY_W: [C-KEY_DELETE, { set_mode: default }]
+
   - name: visual
     mode: visual
     exact_match: true
@@ -62,6 +83,7 @@ keymap:
 
       # how to get out of visual mode
       KEY_D: [KEY_DELETE, { set_mode: normal }]
+      KEY_C: [KEY_DELETE, { set_mode: default }]
       KEY_Y: [C-KEY_C, KEY_ESC, { set_mode: normal }]
       KEY_ESC: [KEY_ESC, { set_mode: normal }]
 
