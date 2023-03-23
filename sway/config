@@ -21,7 +21,7 @@ set $term alacritty
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
-output * bg /home/samuel/.dotfiles/images/tokyo-warm.jpg fill
+output * bg /home/samuel/.dotfiles/images/tokyo-neon.jpg fill
 #
 # Example configuration:
 #
@@ -220,21 +220,24 @@ include /etc/sway/config.d/*
 
 
 # custom
-
+default_border none
 # no header
-default_border pixel 1
+# default_border pixel 1
 default_floating_border pixel 1
 
-gaps inner 3
-gaps outer 3
+gaps inner 7
+# outer gap seems to be an additional gap around the outside (in addition to the inner gap)
+# gaps outer 0
+
 
 
 assign [class="Google-chrome"] 10
 assign [class="Code"] 1
 # for_window [app_id=".*(DEBUG)"] floating enable
 
-for_window [class="Code"] opacity 0.95
-for_window [class="Google-chrome"] opacity 0.95
+for_window [class="Code"] opacity 0.93
+for_window [class="Google-chrome"] opacity 0.93
+for_window [app_id="Alacritty"] opacity 0.93
 
 exec --no-startup-id code
 exec --no-startup-id google-chrome-stable
