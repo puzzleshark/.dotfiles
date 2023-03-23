@@ -31,6 +31,7 @@
     },
     "editor.inlineSuggest.enabled": true,
     "security.workspace.trust.untrustedFiles": "open",
+    "workbench.activityBar.visible": false,
 
     // "extensions.ignoreRecommendations": true,
     // "security.workspace.trust.untrustedFiles": "open",

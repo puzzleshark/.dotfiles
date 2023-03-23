@@ -1,0 +1,19 @@
+keymap:
+
+  - name: whatever
+    mode: default
+    remap:
+      # Set mode to configure Vim-like modal remapping
+      KEY_F1: { set_mode: fun }
+
+  - name: vsremap
+    mode: fun
+    remap:
+      KEY_I: { set_mode: default }
+      KEY_J: KEY_DOWN
+      KEY_K: KEY_UP
+      KEY_L: KEY_RIGHT
+      KEY_H: KEY_LEFT
+      KEY_W: KEY_LEFTCTRL-KEY_RIGHT
+
+default_mode: default

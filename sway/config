@@ -238,6 +238,7 @@ assign [class="Code"] 1
 for_window [class="Code"] opacity 0.93
 for_window [class="Google-chrome"] opacity 0.93
 for_window [app_id="Alacritty"] opacity 0.93
+# for_window [app_id="org.freecadweb.FreeCAD"] opacity 0.93
 
 exec --no-startup-id code
 exec --no-startup-id google-chrome-stable
