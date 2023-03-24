@@ -8,7 +8,7 @@ export EDITOR="nvim"
 fpath=($HOME/.completion_zsh $fpath)
 
 plugins=(
-    vi-mode
+    # vi-mode
     zsh-autosuggestions
     zsh-syntax-highlighting
     direnv

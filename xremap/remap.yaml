@@ -5,13 +5,55 @@ keymap:
     exact_match: true
     remap:
       # set mode to configure Vim-like modal remapping
-      KEY_F1: { set_mode: normal }
+      # KEY_F1: { set_mode: normal }
+      KEY_CAPSLOCK: { set_mode: normal }
 
   - name: normal
     mode: normal
     exact_match: true
     remap:
+
+      # back to default mode
       KEY_I: { set_mode: default }
+      KEY_A: [KEY_RIGHT, { set_mode: default }]
+      KEY_O: [KEY_END, KEY_ENTER]
+
+      KEY_CAPSLOCK: KEY_ESC
+
+      # no op keys
+      KEY_Q: KEY_ESC
+      KEY_W: KEY_ESC
+      KEY_R: KEY_ESC
+      KEY_T: KEY_ESC
+      KEY_Y: KEY_ESC
+      KEY_U: KEY_ESC
+      # KEY_I: KEY_ESC
+      # KEY_O: KEY_ESC
+      # KEY_P: KEY_ESC
+      KEY_LEFTBRACE: KEY_ESC  # [
+      KEY_RIGHTBRACE: KEY_ESC  # ]
+      # KEY_A: KEY_ESC
+      KEY_S: KEY_ESC
+      KEY_D: KEY_ESC
+      KEY_F: KEY_ESC
+      # KEY_G: KEY_ESC
+      # KEY_H: KEY_ESC
+      # KEY_J: KEY_ESC
+      # KEY_K: KEY_ESC
+      # KEY_L: KEY_ESC
+      KEY_SEMICOLON: KEY_ESC  # ;
+      KEY_APOSTROPHE: KEY_ESC  # '
+      KEY_BACKSLASH: KEY_ESC  # \
+      KEY_Z: KEY_ESC
+      # KEY_X: KEY_ESC
+      # KEY_C: KEY_ESC
+      # KEY_V: KEY_ESC
+      # KEY_B: KEY_ESC
+      KEY_N: KEY_ESC
+      KEY_M: KEY_ESC
+      KEY_COMMA: KEY_ESC # ,
+      KEY_DOT: KEY_ESC # .
+      KEY_SLASH: KEY_ESC # /
 
       # movement
       KEY_J: KEY_DOWN
@@ -24,10 +66,16 @@ keymap:
       KEY_E: C-KEY_RIGHT
       KEY_B: C-KEY_LEFT
 
+      # SHIFT-KEY_U: KEY_PAGEUP
+      # SHIFT-KEY_D: KEY_PAGEDOWN
+
       KEY_X: KEY_DELETE
       KEY_U: C-KEY_Z
       KEY_V: { set_mode: visual }
       KEY_P: C-KEY_V
+
+      SHIFT-KEY_I: [KEY_HOME, { set_mode: default }]
+      SHIFT-KEY_A: [KEY_END, { set_mode: default }]
 
       # end of line
       SHIFT-KEY_4: KEY_END
@@ -54,6 +102,7 @@ keymap:
               KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE]
           KEY_W: C-KEY_DELETE
 
+      # equivalent cut stuff
       KEY_C:
         remap:
           KEY_I:
@@ -69,6 +118,10 @@ keymap:
     exact_match: true
     remap:
       KEY_I: { set_mode: default }
+      KEY_A: [KEY_RIGHT, { set_mode: default }]
+      KEY_O: [KEY_END, KEY_ENTER]
+
+      KEY_CAPSLOCK: KEY_ESC
 
       # movement
       KEY_J: SHIFT-KEY_DOWN

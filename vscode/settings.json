@@ -32,6 +32,7 @@
     "editor.inlineSuggest.enabled": true,
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.activityBar.visible": false,
+    "editor.cursorStyle": "block",
 
     // "extensions.ignoreRecommendations": true,
     // "security.workspace.trust.untrustedFiles": "open",
