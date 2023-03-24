@@ -67,19 +67,19 @@ keymap:
       SHIFT-KEY_A: KEY_ESC
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
-      KEY_D: KEY_ESC
+      KEY_D: [SUPER-D, { set_mode: insert }]
       SHIFT-KEY_D: KEY_ESC
       KEY_F: KEY_ESC
       SHIFT-KEY_F: KEY_ESC
       KEY_G: KEY_ESC
       SHIFT-KEY_G: KEY_ESC
-      KEY_H: KEY_ESC
+      KEY_H: SUPER-KEY_H
       SHIFT-KEY_H: KEY_ESC
-      KEY_J: KEY_ESC
+      KEY_J: SUPER-KEY_J
       SHIFT-KEY_J: KEY_ESC
-      KEY_K: KEY_ESC
+      KEY_K: SUPER-KEY_K
       SHIFT-KEY_K: KEY_ESC
-      KEY_L: KEY_ESC
+      KEY_L: SUPER-KEY_L
       SHIFT-KEY_L: KEY_ESC
       KEY_SEMICOLON: KEY_ESC
       SHIFT-KEY_SEMICOLON: KEY_ESC
@@ -89,7 +89,7 @@ keymap:
       SHIFT-KEY_BACKSLASH: KEY_ESC
       KEY_Z: KEY_ESC
       SHIFT-KEY_Z: KEY_ESC
-      KEY_X: KEY_ESC
+      KEY_X: [SUPER-SHIFT-KEY_Q, { set_mode: normal }]
       SHIFT-KEY_X: KEY_ESC
       KEY_C: KEY_ESC
       SHIFT-KEY_C: KEY_ESC
@@ -108,6 +108,7 @@ keymap:
       KEY_SLASH: KEY_ESC
       SHIFT-KEY_SLASH: KEY_ESC
       KEY_SPACE: KEY_ESC
+      KEY_ENTER: [SUPER-KEY_ENTER, { set_mode: insert }]
         
 
 
