@@ -5,7 +5,6 @@ keymap:
     exact_match: true
     remap:
       # set mode to configure Vim-like modal remapping
-      # KEY_F1: { set_mode: normal }
       KEY_CAPSLOCK: { set_mode: normal }
 
   - name: normal
@@ -13,14 +12,9 @@ keymap:
     exact_match: true
     remap:
 
-      # back to default mode
-      KEY_I: { set_mode: default }
-      KEY_A: [KEY_RIGHT, { set_mode: default }]
-      KEY_O: [KEY_END, KEY_ENTER]
-
+      # special key
       KEY_CAPSLOCK: KEY_ESC
 
-      # no op keys
       KEY_GRAVE: KEY_ESC  # `
       SHIFT-KEY_GRAVE: KEY_ESC
       KEY_1: KEY_ESC
@@ -30,11 +24,11 @@ keymap:
       KEY_3: KEY_ESC
       SHIFT-KEY_3: KEY_ESC
       KEY_4: KEY_ESC
-      # SHIFT-KEY_4: KEY_ESC
+      SHIFT-KEY_4: KEY_END  # end of line
       KEY_5: KEY_ESC
       SHIFT-KEY_5: KEY_ESC
       KEY_6: KEY_ESC
-      # SHIFT-KEY_6: KEY_ESC
+      SHIFT-KEY_6: KEY_HOME  # beginning of line
       KEY_7: KEY_ESC
       SHIFT-KEY_7: KEY_ESC
       KEY_8: KEY_ESC
@@ -49,43 +43,55 @@ keymap:
       SHIFT-KEY_EQUAL: KEY_ESC  # =
       KEY_Q: KEY_ESC
       SHIFT-KEY_Q: KEY_ESC
-      KEY_W: KEY_ESC
+      KEY_W: [C-KEY_RIGHT, C-KEY_RIGHT, C-KEY_LEFT]
       SHIFT-KEY_W: KEY_ESC
+      KEY_E: C-KEY_RIGHT
+      SHIFT-KEY_E: KEY_ESC
       KEY_R: KEY_ESC
       SHIFT-KEY_R: KEY_ESC
       KEY_T: KEY_ESC
       SHIFT-KEY_T: KEY_ESC
       KEY_Y: KEY_ESC
       SHIFT-KEY_Y: KEY_ESC
-      # KEY_U: KEY_ESC
+      KEY_U: C-KEY_Z
       SHIFT-KEY_U: KEY_ESC
-      # KEY_I: KEY_ESC
-      # SHIFT-KEY_I: KEY_ESC
-      # KEY_O: KEY_ESC
+      KEY_I: { set_mode: default }
+      SHIFT-KEY_I: [KEY_HOME, { set_mode: default }]
+      KEY_O: [KEY_END, KEY_ENTER]
       SHIFT-KEY_O: KEY_ESC
-      # KEY_P: KEY_ESC
+      KEY_P: C-KEY_V
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC  # [
       SHIFT-KEY_LEFTBRACE: KEY_ESC
       KEY_RIGHTBRACE: KEY_ESC  # ]
       SHIFT-KEY_RIGHTBRACE: KEY_ESC
-      # KEY_A: KEY_ESC
-      # SHIFT-KEY_A: KEY_ESC
+      KEY_A: [KEY_RIGHT, { set_mode: default }]
+      SHIFT-KEY_A: [KEY_END, { set_mode: default }]
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
-      # KEY_D: KEY_ESC
+      KEY_D:  # delete stuff
+        remap:
+          KEY_I:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE]
+          KEY_A:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE]
+          KEY_W: C-KEY_DELETE
       SHIFT-KEY_D: KEY_ESC
       KEY_F: KEY_ESC
       SHIFT-KEY_F: KEY_ESC
-      # KEY_G: KEY_ESC
-      # SHIFT-KEY_G: KEY_ESC
-      # KEY_H: KEY_ESC
+      KEY_G:
+        remap:
+          KEY_G: C-KEY_HOME # beginning of file
+      SHIFT-KEY_G: C-KEY_END
+      KEY_H: KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
-      # KEY_J: KEY_ESC
+      KEY_J: KEY_DOWN
       SHIFT-KEY_J: KEY_ESC
-      # KEY_K: KEY_ESC
+      KEY_K: KEY_UP
       SHIFT-KEY_K: KEY_ESC
-      # KEY_L: KEY_ESC
+      KEY_L: KEY_RIGHT
       SHIFT-KEY_L: KEY_ESC
       KEY_SEMICOLON: KEY_ESC  # ;
       SHIFT-KEY_SEMICOLON: KEY_ESC
@@ -95,13 +101,21 @@ keymap:
       SHIFT-KEY_BACKSLASH: KEY_ESC
       KEY_Z: KEY_ESC
       SHIFT-KEY_Z: KEY_ESC
-      # KEY_X: KEY_ESC
+      KEY_X: KEY_DELETE
       SHIFT-KEY_X: KEY_ESC
-      # KEY_C: KEY_ESC
+      KEY_C:  # equivalent cut stuff
+        remap:
+          KEY_I:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, { set_mode: default }]
+          KEY_A:
+            remap:
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: default }]
+          KEY_W: [C-KEY_DELETE, { set_mode: default }]
       SHIFT-KEY_C: KEY_ESC
-      # KEY_V: KEY_ESC
+      KEY_V: { set_mode: visual }
       SHIFT-KEY_V: KEY_ESC
-      # KEY_B: KEY_ESC
+      KEY_B: C-KEY_LEFT
       SHIFT-KEY_B: KEY_ESC
       KEY_N: KEY_ESC
       SHIFT-KEY_N: KEY_ESC
@@ -114,103 +128,145 @@ keymap:
       KEY_SLASH: KEY_ESC # /
       SHIFT-KEY_SLASH: KEY_ESC
 
-      # movement
-      KEY_J: KEY_DOWN
-      KEY_K: KEY_UP
-      KEY_L: KEY_RIGHT
-      KEY_H: KEY_LEFT
-
-      # larger movements
-      KEY_W: [C-KEY_RIGHT, C-KEY_RIGHT, C-KEY_LEFT]
-      KEY_E: C-KEY_RIGHT
-      KEY_B: C-KEY_LEFT
-
-      # SHIFT-KEY_U: KEY_PAGEUP
-      # SHIFT-KEY_D: KEY_PAGEDOWN
-
-      KEY_X: KEY_DELETE
-      KEY_U: C-KEY_Z
-      KEY_V: { set_mode: visual }
-      KEY_P: C-KEY_V
-
-      SHIFT-KEY_I: [KEY_HOME, { set_mode: default }]
-      SHIFT-KEY_A: [KEY_END, { set_mode: default }]
-
-      # end of line
-      SHIFT-KEY_4: KEY_END
-
-      # beginning of line
-      SHIFT-KEY_6: KEY_HOME
-
-      # end of file
-      SHIFT-KEY_G: C-KEY_END
-
-      # beginning of file
-      KEY_G:
-        remap:
-          KEY_G: C-KEY_HOME
-
-      # delete stuff
-      KEY_D:
-        remap:
-          KEY_I:
-            remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE]
-          KEY_A:
-            remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE]
-          KEY_W: C-KEY_DELETE
-
-      # equivalent cut stuff
-      KEY_C:
-        remap:
-          KEY_I:
-            remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, { set_mode: default }]
-          KEY_A:
-            remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: default }]
-          KEY_W: [C-KEY_DELETE, { set_mode: default }]
 
   - name: visual
     mode: visual
     exact_match: true
     remap:
-      KEY_I: { set_mode: default }
-      KEY_A: [KEY_RIGHT, { set_mode: default }]
-      KEY_O: [KEY_END, KEY_ENTER]
 
-      KEY_CAPSLOCK: [KEY_ESC, { set_mode: normal }]
 
-      # movement
-      KEY_J: SHIFT-KEY_DOWN
-      KEY_K: SHIFT-KEY_UP
-      KEY_L: SHIFT-KEY_RIGHT
-      KEY_H: SHIFT-KEY_LEFT
+      KEY_GRAVE: KEY_ESC
+      SHIFT-KEY_GRAVE: KEY_ESC
+      KEY_1: KEY_ESC
+      SHIFT-KEY_1: KEY_ESC
+      KEY_2: KEY_ESC
+      SHIFT-KEY_2: KEY_ESC
+      KEY_3: KEY_ESC
+      SHIFT-KEY_3: KEY_ESC
+      KEY_4: KEY_ESC
+      SHIFT-KEY_4: KEY_ESC
+      KEY_5: KEY_ESC
+      SHIFT-KEY_5: KEY_ESC
+      KEY_6: KEY_ESC
+      SHIFT-KEY_6: KEY_ESC
+      KEY_7: KEY_ESC
+      SHIFT-KEY_7: KEY_ESC
+      KEY_8: KEY_ESC
+      SHIFT-KEY_8: KEY_ESC
+      KEY_9: KEY_ESC
+      SHIFT-KEY_9: KEY_ESC
+      KEY_0: KEY_ESC
+      SHIFT-KEY_0: KEY_ESC
+      KEY_MINUS: KEY_ESC
+      SHIFT-KEY_MINUS: KEY_ESC
+      KEY_EQUAL: KEY_ESC
+      SHIFT-KEY_EQUAL: KEY_ESC
+      KEY_Q: KEY_ESC
+      SHIFT-KEY_Q: KEY_ESC
+      KEY_W: KEY_ESC
+      SHIFT-KEY_W: KEY_ESC
+      KEY_E: KEY_ESC
+      SHIFT-KEY_E: KEY_ESC
+      KEY_R: KEY_ESC
+      SHIFT-KEY_R: KEY_ESC
+      KEY_T: KEY_ESC
+      SHIFT-KEY_T: KEY_ESC
+      KEY_Y: KEY_ESC
+      SHIFT-KEY_Y: KEY_ESC
+      KEY_U: KEY_ESC
+      SHIFT-KEY_U: KEY_ESC
+      KEY_I: KEY_ESC
+      SHIFT-KEY_I: KEY_ESC
+      KEY_O: KEY_ESC
+      SHIFT-KEY_O: KEY_ESC
+      KEY_P: KEY_ESC
+      SHIFT-KEY_P: KEY_ESC
+      KEY_LEFTBRACE: KEY_ESC
+      SHIFT-KEY_LEFTBRACE: KEY_ESC
+      KEY_RIGHTBRACE: KEY_ESC
+      SHIFT-KEY_RIGHTBRACE: KEY_ESC
+      KEY_A: KEY_ESC
+      SHIFT-KEY_A: KEY_ESC
+      KEY_S: KEY_ESC
+      SHIFT-KEY_S: KEY_ESC
+      KEY_D: KEY_ESC
+      SHIFT-KEY_D: KEY_ESC
+      KEY_F: KEY_ESC
+      SHIFT-KEY_F: KEY_ESC
+      KEY_G: KEY_ESC
+      SHIFT-KEY_G: KEY_ESC
+      KEY_H: KEY_ESC
+      SHIFT-KEY_H: KEY_ESC
+      KEY_J: KEY_ESC
+      SHIFT-KEY_J: KEY_ESC
+      KEY_K: KEY_ESC
+      SHIFT-KEY_K: KEY_ESC
+      KEY_L: KEY_ESC
+      SHIFT-KEY_L: KEY_ESC
+      KEY_SEMICOLON: KEY_ESC
+      SHIFT-KEY_SEMICOLON: KEY_ESC
+      KEY_APOSTROPHE: KEY_ESC
+      SHIFT-KEY_APOSTROPHE: KEY_ESC
+      KEY_BACKSLASH: KEY_ESC
+      SHIFT-KEY_BACKSLASH: KEY_ESC
+      KEY_Z: KEY_ESC
+      SHIFT-KEY_Z: KEY_ESC
+      KEY_X: KEY_ESC
+      SHIFT-KEY_X: KEY_ESC
+      KEY_C: KEY_ESC
+      SHIFT-KEY_C: KEY_ESC
+      KEY_V: KEY_ESC
+      SHIFT-KEY_V: KEY_ESC
+      KEY_B: KEY_ESC
+      SHIFT-KEY_B: KEY_ESC
+      KEY_N: KEY_ESC
+      SHIFT-KEY_N: KEY_ESC
+      KEY_M: KEY_ESC
+      SHIFT-KEY_M: KEY_ESC
+      KEY_COMMA: KEY_ESC
+      SHIFT-KEY_COMMA: KEY_ESC
+      KEY_DOT: KEY_ESC
+      SHIFT-KEY_DOT: KEY_ESC
+      KEY_SLASH: KEY_ESC
+      SHIFT-KEY_SLASH: KEY_ESC
 
-      # larger movements
-      KEY_W: [SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_LEFT]
-      KEY_E: SHIFT-C-KEY_RIGHT
-      KEY_B: SHIFT-C-KEY_LEFT
 
-      # how to get out of visual mode
-      KEY_D: [KEY_DELETE, { set_mode: normal }]
-      KEY_C: [KEY_DELETE, { set_mode: default }]
-      KEY_Y: [C-KEY_C, KEY_ESC, { set_mode: normal }]
-      KEY_ESC: [KEY_ESC, { set_mode: normal }]
 
-      # end of line
-      SHIFT-KEY_4: SHIFT-KEY_END
-
-      # beginning of line
-      SHIFT-KEY_6: SHIFT-KEY_HOME
-
-      # end of file
-      SHIFT-KEY_G: SHIFT-C-KEY_END
-
-      # beginning of file
-      KEY_G:
-        remap:
-          KEY_G: SHIFT-C-KEY_HOME
+      # KEY_I: { set_mode: default }
+      # KEY_A: [KEY_RIGHT, { set_mode: default }]
+      # KEY_O: [KEY_END, KEY_ENTER]
+      #
+      # KEY_CAPSLOCK: [KEY_ESC, { set_mode: normal }]
+      #
+      # # movement
+      # KEY_J: SHIFT-KEY_DOWN
+      # KEY_K: SHIFT-KEY_UP
+      # KEY_L: SHIFT-KEY_RIGHT
+      # KEY_H: SHIFT-KEY_LEFT
+      #
+      # # larger movements
+      # KEY_W: [SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_LEFT]
+      # KEY_E: SHIFT-C-KEY_RIGHT
+      # KEY_B: SHIFT-C-KEY_LEFT
+      #
+      # # how to get out of visual mode
+      # KEY_D: [KEY_DELETE, { set_mode: normal }]
+      # KEY_C: [KEY_DELETE, { set_mode: default }]
+      # KEY_Y: [C-KEY_C, KEY_ESC, { set_mode: normal }]
+      # KEY_ESC: [KEY_ESC, { set_mode: normal }]
+      #
+      # # end of line
+      # SHIFT-KEY_4: SHIFT-KEY_END
+      #
+      # # beginning of line
+      # SHIFT-KEY_6: SHIFT-KEY_HOME
+      #
+      # # end of file
+      # SHIFT-KEY_G: SHIFT-C-KEY_END
+      #
+      # # beginning of file
+      # KEY_G:
+      #   remap:
+      #     KEY_G: SHIFT-C-KEY_HOME
 
 default_mode: default
