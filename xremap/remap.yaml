@@ -1,14 +1,12 @@
 keymap:
 
-  - name: default
-    mode: default
+  - mode: insert
     exact_match: true
     remap:
       # set mode to configure Vim-like modal remapping
       KEY_CAPSLOCK: { set_mode: normal }
 
-  - name: normal
-    mode: normal
+  - mode: normal
     exact_match: true
     remap:
 
@@ -55,9 +53,9 @@ keymap:
       SHIFT-KEY_Y: KEY_ESC
       KEY_U: C-KEY_Z
       SHIFT-KEY_U: KEY_ESC
-      KEY_I: { set_mode: default }
-      SHIFT-KEY_I: [KEY_HOME, { set_mode: default }]
-      KEY_O: [KEY_END, KEY_ENTER]
+      KEY_I: { set_mode: insert }
+      SHIFT-KEY_I: [KEY_HOME, { set_mode: insert }]
+      KEY_O: [KEY_END, KEY_ENTER, { set_mode: insert }]
       SHIFT-KEY_O: KEY_ESC
       KEY_P: C-KEY_V
       SHIFT-KEY_P: KEY_ESC
@@ -65,8 +63,8 @@ keymap:
       SHIFT-KEY_LEFTBRACE: KEY_ESC
       KEY_RIGHTBRACE: KEY_ESC  # ]
       SHIFT-KEY_RIGHTBRACE: KEY_ESC
-      KEY_A: [KEY_RIGHT, { set_mode: default }]
-      SHIFT-KEY_A: [KEY_END, { set_mode: default }]
+      KEY_A: [KEY_RIGHT, { set_mode: insert }]
+      SHIFT-KEY_A: [KEY_END, { set_mode: insert }]
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
       KEY_D:  # delete stuff
@@ -107,11 +105,11 @@ keymap:
         remap:
           KEY_I:
             remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, { set_mode: default }]
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, { set_mode: insert }]
           KEY_A:
             remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: default }]
-          KEY_W: [C-KEY_DELETE, { set_mode: default }]
+              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: insert }]
+          KEY_W: [C-KEY_DELETE, { set_mode: insert }]
       SHIFT-KEY_C: KEY_ESC
       KEY_V: { set_mode: visual }
       SHIFT-KEY_V: KEY_ESC
@@ -129,8 +127,7 @@ keymap:
       SHIFT-KEY_SLASH: KEY_ESC
 
 
-  - name: visual
-    mode: visual
+  - mode: visual
     exact_match: true
     remap:
 
@@ -177,7 +174,7 @@ keymap:
       SHIFT-KEY_Y: KEY_ESC
       KEY_U: KEY_ESC
       SHIFT-KEY_U: KEY_ESC
-      KEY_I: { set_mode: default }
+      KEY_I: { set_mode: insert }
       SHIFT-KEY_I: KEY_ESC
       KEY_O: [KEY_END, KEY_ENTER]
       SHIFT-KEY_O: KEY_ESC
@@ -187,7 +184,7 @@ keymap:
       SHIFT-KEY_LEFTBRACE: KEY_ESC
       KEY_RIGHTBRACE: KEY_ESC
       SHIFT-KEY_RIGHTBRACE: KEY_ESC
-      KEY_A: [KEY_RIGHT, { set_mode: default }]
+      KEY_A: [KEY_RIGHT, { set_mode: insert }]
       SHIFT-KEY_A: KEY_ESC
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
@@ -217,7 +214,7 @@ keymap:
       SHIFT-KEY_Z: KEY_ESC
       KEY_X: KEY_ESC
       SHIFT-KEY_X: KEY_ESC
-      KEY_C: [KEY_DELETE, { set_mode: default }]
+      KEY_C: [KEY_DELETE, { set_mode: insert }]
       SHIFT-KEY_C: KEY_ESC
       KEY_V: KEY_ESC
       SHIFT-KEY_V: KEY_ESC
@@ -234,4 +231,4 @@ keymap:
       KEY_SLASH: KEY_ESC
       SHIFT-KEY_SLASH: KEY_ESC
 
-default_mode: default
+default_mode: insert
