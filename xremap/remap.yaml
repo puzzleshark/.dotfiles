@@ -116,7 +116,7 @@ keymap:
     exact_match: true
     remap:
       # set mode to configure Vim-like modal remapping
-      KEY_CAPSLOCK: { set_mode: normal }
+      KEY_CAPSLOCK: [{ set_mode: normal }, KEY_ESC]
 
   - mode: normal
     exact_match: true
@@ -183,10 +183,10 @@ keymap:
         remap:
           KEY_I:
             remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE]
+              KEY_W: [KEY_RIGHT, C-KEY_LEFT, C-KEY_DELETE]
           KEY_A:
             remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE]
+              KEY_W: [KEY_RIGHT, C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE]
           KEY_W: C-KEY_DELETE
       SHIFT-KEY_D: KEY_ESC
       KEY_F: KEY_ESC
@@ -198,7 +198,7 @@ keymap:
       KEY_H: KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
       KEY_J: KEY_DOWN
-      SHIFT-KEY_J: KEY_ESC
+      SHIFT-KEY_J: [KEY_HOME, KEY_SPACE, KEY_BACKSPACE, KEY_BACKSPACE]
       KEY_K: KEY_UP
       SHIFT-KEY_K: KEY_ESC
       KEY_L: KEY_RIGHT
@@ -217,10 +217,10 @@ keymap:
         remap:
           KEY_I:
             remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, { set_mode: insert }]
+              KEY_W: [KEY_RIGHT, C-KEY_LEFT, C-KEY_DELETE, { set_mode: insert }]
           KEY_A:
             remap:
-              KEY_W: [C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: insert }]
+              KEY_W: [KEY_RIGHT, C-KEY_LEFT, C-KEY_DELETE, KEY_DELETE, { set_mode: insert }]
           KEY_W: [C-KEY_DELETE, { set_mode: insert }]
       SHIFT-KEY_C: KEY_ESC
       KEY_V: { set_mode: visual }
@@ -235,7 +235,7 @@ keymap:
       SHIFT-KEY_COMMA: KEY_ESC
       KEY_DOT: KEY_ESC # .
       SHIFT-KEY_DOT: KEY_ESC
-      KEY_SLASH: KEY_ESC # /
+      KEY_SLASH: [C-KEY_F, { set_mode: insert }] # /
       SHIFT-KEY_SLASH: KEY_ESC
       KEY_SPACE: KEY_ESC
 
@@ -331,8 +331,8 @@ keymap:
       SHIFT-KEY_C: KEY_ESC
       KEY_V: KEY_ESC
       SHIFT-KEY_V: KEY_ESC
-      KEY_B: KEY_ESC
-      SHIFT-KEY_B: SHIFT-C-KEY_LEFT
+      KEY_B: SHIFT-C-KEY_LEFT
+      SHIFT-KEY_B: KEY_ESC
       KEY_N: KEY_ESC
       SHIFT-KEY_N: KEY_ESC
       KEY_M: KEY_ESC
@@ -341,7 +341,7 @@ keymap:
       SHIFT-KEY_COMMA: KEY_ESC
       KEY_DOT: KEY_ESC
       SHIFT-KEY_DOT: KEY_ESC
-      KEY_SLASH: KEY_ESC
+      KEY_SLASH: [C-KEY_F, { set_mode: insert } ]
       SHIFT-KEY_SLASH: KEY_ESC
       KEY_SPACE: KEY_ESC
 
