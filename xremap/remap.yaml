@@ -1,5 +1,13 @@
 keymap:
 
+  # - mode: normal
+  #   exact_match: true
+  #   application: 
+  #     only: Alacritty 
+  #   remap:
+  #     KEY_T: KEY_M 
+
+
   - mode: insert
     exact_match: true
     remap:
@@ -125,6 +133,7 @@ keymap:
       SHIFT-KEY_DOT: KEY_ESC
       KEY_SLASH: KEY_ESC # /
       SHIFT-KEY_SLASH: KEY_ESC
+      KEY_SPACE: KEY_ESC
 
 
   - mode: visual
@@ -230,5 +239,6 @@ keymap:
       SHIFT-KEY_DOT: KEY_ESC
       KEY_SLASH: KEY_ESC
       SHIFT-KEY_SLASH: KEY_ESC
+      KEY_SPACE: KEY_ESC
 
 default_mode: insert
