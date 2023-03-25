@@ -113,6 +113,8 @@ keymap:
       KEY_G:
         remap:
           KEY_G: C-KEY_HOME # beginning of file
+          KEY_U: KEY_PAGEUP
+          KEY_D: KEY_PAGEDOWN
       SHIFT-KEY_G: C-KEY_END
       KEY_H: KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
@@ -227,6 +229,8 @@ keymap:
       KEY_G:
         remap:
           KEY_G: SHIFT-C-KEY_HOME
+          KEY_U: SHIFT-KEY_PAGEUP
+          KEY_D: SHIFT-KEY_PAGEDOWN
       SHIFT-KEY_G: SHIFT-C-KEY_END
       KEY_H: SHIFT-KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
