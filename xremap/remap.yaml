@@ -19,7 +19,7 @@ keymap:
     remap:
       KEY_P: C-SHIFT-KEY_V
       KEY_V: [C-SHIFT-SPACE, KEY_V]
-      KEY_Y: KEY_Y
+      KEY_Y: [KEY_Y, C-SHIFT-SPACE]
 
   - mode: normal
     exact_match: true
@@ -30,6 +30,7 @@ keymap:
       KEY_M: C-KEY_1
       KEY_E: C-SHIFT-KEY_E
       KEY_N: [C-KEY_J, C-KEY_B]
+      SHIFT-KEY_O: [KEY_END, C-SHIFT-KEY_ENTER, { set_mode: insert }]
 
   - mode: normal
     exact_match: true
@@ -58,7 +59,7 @@ keymap:
       SHIFT-KEY_8: KEY_ESC
       KEY_9: KEY_ESC
       SHIFT-KEY_9: KEY_ESC
-      KEY_0: KEY_ESC
+      KEY_0: [KEY_HOME, C-KEY_LEFT]
       SHIFT-KEY_0: KEY_ESC
       KEY_MINUS: KEY_ESC
       SHIFT-KEY_MINUS: KEY_ESC
@@ -66,7 +67,7 @@ keymap:
       SHIFT-KEY_EQUAL: KEY_ESC
       KEY_Q: KEY_ESC
       SHIFT-KEY_Q: KEY_ESC
-      KEY_W: [C-KEY_RIGHT, C-KEY_RIGHT, C-KEY_LEFT]
+      KEY_W: KEY_ESC
       SHIFT-KEY_W: KEY_ESC
       KEY_E: C-KEY_RIGHT
       SHIFT-KEY_E: KEY_ESC
@@ -81,7 +82,7 @@ keymap:
       KEY_I: { set_mode: insert }
       SHIFT-KEY_I: [KEY_HOME, { set_mode: insert }]
       KEY_O: [KEY_END, KEY_ENTER, { set_mode: insert }]
-      SHIFT-KEY_O: [KEY_END, C-SHIFT-KEY_ENTER, { set_mode: insert }]
+      SHIFT-KEY_O: KEY_ESC
       KEY_P: C-KEY_V
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC
