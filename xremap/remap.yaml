@@ -75,7 +75,7 @@ keymap:
       SHIFT-KEY_W: KEY_ESC
       KEY_E: C-KEY_RIGHT
       SHIFT-KEY_E: KEY_ESC
-      KEY_R: KEY_ESC
+      KEY_R: [KEY_DELETE, { set_mode: insert }]
       SHIFT-KEY_R: KEY_ESC
       KEY_T: KEY_ESC
       SHIFT-KEY_T: KEY_ESC
@@ -115,6 +115,8 @@ keymap:
           KEY_G: C-KEY_HOME # beginning of file
           KEY_U: KEY_PAGEUP
           KEY_D: KEY_PAGEDOWN
+          KEY_T: C-KEY_TAB
+          SHIFT-KEY_T: C-SHIFT-KEY_TAB
       SHIFT-KEY_G: C-KEY_END
       KEY_H: KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
@@ -350,7 +352,7 @@ keymap:
       SHIFT-KEY_BACKSLASH: KEY_ESC
       KEY_Z: KEY_ESC
       SHIFT-KEY_Z: KEY_ESC
-      KEY_X: [SUPER-SHIFT-KEY_Q, { set_mode: normal }]
+      KEY_X: SUPER-SHIFT-KEY_Q
       SHIFT-KEY_X: KEY_ESC
       KEY_C: KEY_ESC
       SHIFT-KEY_C: KEY_ESC
