@@ -1,10 +1,35 @@
 keymap:
 
-
   - mode: insert
     exact_match: true
     remap:
       KEY_CAPSLOCK: { set_mode: normal }
+
+  - mode: normal
+    exact_match: true
+    application:
+      only: Google-chrome
+    remap:
+      KEY_K: KEY_O
+
+  - mode: normal
+    exact_match: true
+    application:
+      only: Alacritty
+    remap:
+      KEY_P: C-SHIFT-KEY_V
+      KEY_V: [C-SHIFT-SPACE, KEY_V]
+      KEY_Y: KEY_Y
+
+  - mode: normal
+    exact_match: true
+    application:
+      only: Code
+    remap:
+      KEY_T: C-KEY_GRAVE
+      KEY_M: C-KEY_1
+      KEY_E: C-SHIFT-KEY_E
+      KEY_N: [C-KEY_J, C-KEY_B]
 
   - mode: normal
     exact_match: true
@@ -56,7 +81,7 @@ keymap:
       KEY_I: { set_mode: insert }
       SHIFT-KEY_I: [KEY_HOME, { set_mode: insert }]
       KEY_O: [KEY_END, KEY_ENTER, { set_mode: insert }]
-      SHIFT-KEY_O: KEY_ESC
+      SHIFT-KEY_O: [KEY_END, C-SHIFT-KEY_ENTER, { set_mode: insert }]
       KEY_P: C-KEY_V
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC
@@ -164,7 +189,7 @@ keymap:
       SHIFT-KEY_EQUAL: KEY_ESC
       KEY_Q: KEY_ESC
       SHIFT-KEY_Q: KEY_ESC
-      KEY_W: [SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_RIGHT, SHIFT-C-KEY_LEFT]
+      KEY_W: KEY_ESC
       SHIFT-KEY_W: KEY_ESC
       KEY_E: SHIFT-C-KEY_RIGHT
       SHIFT-KEY_E: KEY_ESC
@@ -178,7 +203,7 @@ keymap:
       SHIFT-KEY_U: KEY_ESC
       KEY_I: { set_mode: insert }
       SHIFT-KEY_I: KEY_ESC
-      KEY_O: [KEY_END, KEY_ENTER]
+      KEY_O: KEY_ESC
       SHIFT-KEY_O: KEY_ESC
       KEY_P: KEY_ESC
       SHIFT-KEY_P: KEY_ESC
@@ -266,25 +291,25 @@ keymap:
       SHIFT-KEY_MINUS: KEY_ESC
       KEY_EQUAL: KEY_ESC
       SHIFT-KEY_EQUAL: KEY_ESC
-      KEY_Q: [SUPER-1, { set_mode: normal }]
+      KEY_Q: SUPER-1
       SHIFT-KEY_Q: KEY_ESC
-      KEY_W: [SUPER-2, { set_mode: normal }]
+      KEY_W: SUPER-2
       SHIFT-KEY_W: KEY_ESC
-      KEY_E: [SUPER-3, { set_mode: normal }]
+      KEY_E: SUPER-3
       SHIFT-KEY_E: KEY_ESC
-      KEY_R: [SUPER-4, { set_mode: normal }]
+      KEY_R: SUPER-4
       SHIFT-KEY_R: KEY_ESC
-      KEY_T: [SUPER-5, { set_mode: normal }]
+      KEY_T: SUPER-5
       SHIFT-KEY_T: KEY_ESC
-      KEY_Y: [SUPER-6, { set_mode: normal }]
+      KEY_Y: SUPER-6
       SHIFT-KEY_Y: KEY_ESC
-      KEY_U: [SUPER-7, { set_mode: normal }]
+      KEY_U: SUPER-7
       SHIFT-KEY_U: KEY_ESC
-      KEY_I: [SUPER-8, { set_mode: normal }]
+      KEY_I: SUPER-8
       SHIFT-KEY_I: KEY_ESC
-      KEY_O: [SUPER-9, { set_mode: normal }]
+      KEY_O: SUPER-9
       SHIFT-KEY_O: KEY_ESC
-      KEY_P: [SUPER-0, { set_mode: normal }]
+      KEY_P: SUPER-0
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC
       SHIFT-KEY_LEFTBRACE: KEY_ESC
