@@ -26,10 +26,14 @@ keymap:
     application:
       only: Code
     remap:
-      KEY_T: C-KEY_GRAVE
-      KEY_M: C-KEY_1
-      KEY_E: C-SHIFT-KEY_E
-      KEY_N: [C-KEY_J, C-KEY_B]
+      KEY_SPACE:
+        remap:
+          KEY_T: C-KEY_GRAVE
+          KEY_M: C-KEY_1
+          KEY_E: C-SHIFT-KEY_E
+          KEY_X: C-SHIFT-KEY_X
+          KEY_S: C-KEY_B
+          KEY_B: C-KEY_J
       SHIFT-KEY_O: [KEY_END, C-SHIFT-KEY_ENTER, { set_mode: insert }]
 
   - mode: normal
