@@ -10,7 +10,12 @@ keymap:
     application:
       only: Google-chrome
     remap:
-      KEY_K: KEY_O
+      KEY_SPACE:
+        remap:
+          KEY_T: C-KEY_T
+      KEY_G:
+        remap:
+          KEY_U: C-KEY_L
 
   - mode: normal
     exact_match: true
@@ -75,7 +80,7 @@ keymap:
       SHIFT-KEY_W: KEY_ESC
       KEY_E: C-KEY_RIGHT
       SHIFT-KEY_E: KEY_ESC
-      KEY_R: [KEY_DELETE, { set_mode: insert }]
+      KEY_R: KEY_ESC
       SHIFT-KEY_R: KEY_ESC
       KEY_T: KEY_ESC
       SHIFT-KEY_T: KEY_ESC
@@ -278,25 +283,25 @@ keymap:
 
       KEY_GRAVE: KEY_ESC
       SHIFT-KEY_GRAVE: KEY_ESC
-      KEY_1: KEY_ESC
+      KEY_1: SUPER-1
       SHIFT-KEY_1: KEY_ESC
-      KEY_2: KEY_ESC
+      KEY_2: SUPER-2
       SHIFT-KEY_2: KEY_ESC
-      KEY_3: KEY_ESC
+      KEY_3: SUPER-3
       SHIFT-KEY_3: KEY_ESC
-      KEY_4: KEY_ESC
+      KEY_4: SUPER-4
       SHIFT-KEY_4: KEY_ESC
-      KEY_5: KEY_ESC
+      KEY_5: SUPER-5
       SHIFT-KEY_5: KEY_ESC
-      KEY_6: KEY_ESC
+      KEY_6: SUPER-6
       SHIFT-KEY_6: KEY_ESC
-      KEY_7: KEY_ESC
+      KEY_7: SUPER-7
       SHIFT-KEY_7: KEY_ESC
-      KEY_8: KEY_ESC
+      KEY_8: SUPER-8
       SHIFT-KEY_8: KEY_ESC
-      KEY_9: KEY_ESC
+      KEY_9: SUPER-9
       SHIFT-KEY_9: KEY_ESC
-      KEY_0: KEY_ESC
+      KEY_0: SUPER-0
       SHIFT-KEY_0: KEY_ESC
       KEY_MINUS: KEY_ESC
       SHIFT-KEY_MINUS: KEY_ESC
