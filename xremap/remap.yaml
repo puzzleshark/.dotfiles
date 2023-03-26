@@ -122,6 +122,9 @@ keymap:
           KEY_D: KEY_PAGEDOWN
           KEY_T: C-KEY_TAB
           SHIFT-KEY_T: C-SHIFT-KEY_TAB
+          KEY_C:
+            remap:
+              KEY_C: C-KEY_SLASH
       SHIFT-KEY_G: C-KEY_END
       KEY_H: KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
@@ -238,6 +241,7 @@ keymap:
           KEY_G: SHIFT-C-KEY_HOME
           KEY_U: SHIFT-KEY_PAGEUP
           KEY_D: SHIFT-KEY_PAGEDOWN
+          KEY_C: [C-KEY_SLASH, { set_mode: normal }]
       SHIFT-KEY_G: SHIFT-C-KEY_END
       KEY_H: SHIFT-KEY_LEFT
       SHIFT-KEY_H: KEY_ESC
@@ -307,25 +311,25 @@ keymap:
       SHIFT-KEY_MINUS: KEY_ESC
       KEY_EQUAL: KEY_ESC
       SHIFT-KEY_EQUAL: KEY_ESC
-      KEY_Q: SUPER-1
+      KEY_Q: KEY_ESC
       SHIFT-KEY_Q: KEY_ESC
-      KEY_W: SUPER-2
+      KEY_W: KEY_ESC
       SHIFT-KEY_W: KEY_ESC
-      KEY_E: SUPER-3
+      KEY_E: KEY_ESC
       SHIFT-KEY_E: KEY_ESC
-      KEY_R: SUPER-4
+      KEY_R: KEY_ESC
       SHIFT-KEY_R: KEY_ESC
-      KEY_T: SUPER-5
+      KEY_T: KEY_ESC
       SHIFT-KEY_T: KEY_ESC
-      KEY_Y: SUPER-6
+      KEY_Y: KEY_ESC
       SHIFT-KEY_Y: KEY_ESC
-      KEY_U: SUPER-7
+      KEY_U: KEY_ESC
       SHIFT-KEY_U: KEY_ESC
-      KEY_I: SUPER-8
+      KEY_I: { set_mode: insert }
       SHIFT-KEY_I: KEY_ESC
-      KEY_O: SUPER-9
+      KEY_O: KEY_ESC
       SHIFT-KEY_O: KEY_ESC
-      KEY_P: SUPER-0
+      KEY_P: KEY_ESC
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC
       SHIFT-KEY_LEFTBRACE: KEY_ESC
