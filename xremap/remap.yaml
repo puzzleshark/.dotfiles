@@ -158,8 +158,8 @@ keymap:
       SHIFT-KEY_V: KEY_ESC
       KEY_B: C-KEY_LEFT
       SHIFT-KEY_B: KEY_ESC
-      KEY_N: KEY_ESC
-      SHIFT-KEY_N: KEY_ESC
+      KEY_N: KEY_TAB
+      SHIFT-KEY_N: SHIFT-KEY_TAB
       KEY_M: KEY_ESC
       SHIFT-KEY_M: KEY_ESC
       KEY_COMMA: KEY_ESC # ,
