@@ -141,7 +141,14 @@ keymap:
       KEY_L: KEY_RIGHT
       SHIFT-KEY_L: KEY_ESC
       KEY_SEMICOLON: KEY_ESC
-      SHIFT-KEY_SEMICOLON: KEY_ESC
+      SHIFT-KEY_SEMICOLON:
+        remap:
+          KEY_W:
+            remap:
+              KEY_ENTER: C-KEY_S
+          KEY_Q:
+            remap:
+              KEY_ENTER: C-KEY_W
       KEY_APOSTROPHE: KEY_ESC
       SHIFT-KEY_APOSTROPHE: KEY_ESC
       KEY_BACKSLASH: KEY_ESC
@@ -329,7 +336,7 @@ keymap:
       SHIFT-KEY_R: KEY_ESC
       KEY_T: KEY_ESC
       SHIFT-KEY_T: KEY_ESC
-      KEY_Y: KEY_ESC
+      KEY_Y: [C-KEY_C, { set_mode: normal }]
       SHIFT-KEY_Y: KEY_ESC
       KEY_U: KEY_ESC
       SHIFT-KEY_U: KEY_ESC
@@ -347,12 +354,17 @@ keymap:
       SHIFT-KEY_A: KEY_ESC
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
-      KEY_D: C-KEY_C
+      KEY_D: [C-KEY_X, { set_mode: normal }]
       SHIFT-KEY_D: KEY_ESC
       KEY_F: KEY_ESC
       SHIFT-KEY_F: KEY_ESC
-      KEY_G: KEY_ESC
-      SHIFT-KEY_G: KEY_ESC
+      KEY_G:
+        remap:
+          KEY_G: [SHIFT-C-KEY_HOME, SHIFT-KEY_END]
+          KEY_H: [SHIFT-KEY_PAGEUP, SHIFT-KEY_END]
+          KEY_L: [SHIFT-KEY_PAGEDOWN, SHIFT-KEY_END]
+          KEY_C: [C-KEY_SLASH, KEY_ESC, { set_mode: normal }]
+      SHIFT-KEY_G: [SHIFT-C-KEY_END, SHIFT-KEY_END]
       KEY_H: KEY_ESC
       SHIFT-KEY_H: KEY_ESC
       KEY_J: [SHIFT-KEY_DOWN, SHIFT-KEY_END]
