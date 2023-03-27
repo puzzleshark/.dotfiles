@@ -33,6 +33,13 @@
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.activityBar.visible": false,
     "editor.cursorStyle": "block",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false
+    },
 
     // "extensions.ignoreRecommendations": true,
     // "security.workspace.trust.untrustedFiles": "open",
