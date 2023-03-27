@@ -13,6 +13,7 @@ keymap:
       KEY_SPACE:
         remap:
           KEY_T: C-KEY_T
+          KEY_B: C-SHIFT-KEY_B # bookmark bar
       KEY_G:
         remap:
           KEY_U: C-KEY_L
@@ -39,6 +40,9 @@ keymap:
           KEY_X: C-SHIFT-KEY_X
           KEY_S: C-KEY_B
           KEY_B: C-KEY_J
+      KEY_G:
+        remap:
+          KEY_D: KEY_F12
       SHIFT-KEY_O: [KEY_END, C-SHIFT-KEY_ENTER, { set_mode: insert }]
 
   - mode: normal
@@ -84,7 +88,9 @@ keymap:
       SHIFT-KEY_R: KEY_ESC
       KEY_T: KEY_ESC
       SHIFT-KEY_T: KEY_ESC
-      KEY_Y: KEY_ESC
+      KEY_Y:
+        remap:
+          KEY_Y: C-KEY_C
       SHIFT-KEY_Y: KEY_ESC
       KEY_U: C-KEY_Z
       SHIFT-KEY_U: KEY_ESC
@@ -118,8 +124,8 @@ keymap:
       KEY_G:
         remap:
           KEY_G: C-KEY_HOME # beginning of file
-          KEY_U: KEY_PAGEUP
-          KEY_D: KEY_PAGEDOWN
+          KEY_H: KEY_PAGEUP
+          KEY_L: KEY_PAGEDOWN
           KEY_T: C-KEY_TAB
           SHIFT-KEY_T: C-SHIFT-KEY_TAB
           KEY_C:
@@ -155,7 +161,7 @@ keymap:
           KEY_W: [C-KEY_DELETE, { set_mode: insert }]
       SHIFT-KEY_C: KEY_ESC
       KEY_V: { set_mode: visual }
-      SHIFT-KEY_V: [KEY_END, SHIFT-KEY_HOME, SHIFT-C-KEY_LEFT, { set_mode: visual-line }]
+      SHIFT-KEY_V: [KEY_HOME, C-KEY_LEFT, SHIFT-KEY_END, { set_mode: visual-line }]
       KEY_B: C-KEY_LEFT
       SHIFT-KEY_B: KEY_ESC
       KEY_N: KEY_TAB
@@ -222,7 +228,7 @@ keymap:
       SHIFT-KEY_I: KEY_ESC
       KEY_O: KEY_ESC
       SHIFT-KEY_O: KEY_ESC
-      KEY_P: KEY_ESC
+      KEY_P: C-KEY_V
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC
       SHIFT-KEY_LEFTBRACE: KEY_ESC
@@ -232,15 +238,15 @@ keymap:
       SHIFT-KEY_A: KEY_ESC
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
-      KEY_D: [KEY_DELETE, { set_mode: normal }]
+      KEY_D: [C-KEY_X, { set_mode: normal }]
       SHIFT-KEY_D: KEY_ESC
       KEY_F: KEY_ESC
       SHIFT-KEY_F: KEY_ESC
       KEY_G:
         remap:
           KEY_G: SHIFT-C-KEY_HOME
-          KEY_U: SHIFT-KEY_PAGEUP
-          KEY_D: SHIFT-KEY_PAGEDOWN
+          KEY_H: SHIFT-KEY_PAGEUP
+          KEY_L: SHIFT-KEY_PAGEDOWN
           KEY_C: [C-KEY_SLASH, { set_mode: normal }]
       SHIFT-KEY_G: SHIFT-C-KEY_END
       KEY_H: SHIFT-KEY_LEFT
@@ -331,7 +337,7 @@ keymap:
       SHIFT-KEY_I: KEY_ESC
       KEY_O: KEY_ESC
       SHIFT-KEY_O: KEY_ESC
-      KEY_P: KEY_ESC
+      KEY_P: C-KEY_V
       SHIFT-KEY_P: KEY_ESC
       KEY_LEFTBRACE: KEY_ESC
       SHIFT-KEY_LEFTBRACE: KEY_ESC
@@ -341,7 +347,7 @@ keymap:
       SHIFT-KEY_A: KEY_ESC
       KEY_S: KEY_ESC
       SHIFT-KEY_S: KEY_ESC
-      KEY_D: KEY_ESC
+      KEY_D: C-KEY_C
       SHIFT-KEY_D: KEY_ESC
       KEY_F: KEY_ESC
       SHIFT-KEY_F: KEY_ESC
@@ -349,9 +355,9 @@ keymap:
       SHIFT-KEY_G: KEY_ESC
       KEY_H: KEY_ESC
       SHIFT-KEY_H: KEY_ESC
-      KEY_J: SHIFT-KEY_DOWN
+      KEY_J: [SHIFT-KEY_DOWN, SHIFT-KEY_END]
       SHIFT-KEY_J: KEY_ESC
-      KEY_K: SHIFT-KEY_UP
+      KEY_K: [SHIFT-KEY_UP, SHIFT-KEY_END]
       SHIFT-KEY_K: KEY_ESC
       KEY_L: KEY_ESC
       SHIFT-KEY_L: KEY_ESC

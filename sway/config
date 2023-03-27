@@ -242,3 +242,6 @@ for_window [app_id="Alacritty"] opacity 0.93
 
 exec --no-startup-id code
 exec --no-startup-id google-chrome-stable
+
+# keyboard remapper
+exec --no-startup-id xremap ~/.dotfiles/xremap/remap.yaml
